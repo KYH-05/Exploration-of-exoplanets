@@ -4,6 +4,7 @@ import pygame,sys
 import matplotlib.pyplot as plt
 import math
 import time
+import os
 pygame.init()
 SW=1200
 SH=700
@@ -81,7 +82,9 @@ while True:
   plt.plot(xs,ys,c='r')
   plt.pause(0.000000000001)
 
-  img = pygame.image.load("C:/Users/EK/Desktop/earth/spectrum.jpg")
+
+  img = pygame.image.load(os.getcwd()+"\spectrum.jpg")
+  #img = pygame.image.load("C:/Users/EK/Desktop/earth/spectrum.jpg")
   img = pygame.transform.scale(img, (spectrumW,spectrumH))
   screen.blit(img, (spectrumX,spectrumY))
   lineN = 4
@@ -104,4 +107,4 @@ while True:
 plt.show()
 #질량조절시(항성-행성관 관련성)
 # 행성의 질량을 낮추었을 때, 질량중심과 항성과의 거리가 줄어들고 케플러 3법칙에 따라 공전주기가 짧아지기 때문에 도플러 효과가 잘 나타나지 않는다는 것을 분석함.
-# 행성 공전 반지름과 항성 공전 반지름 
+# 행성 공전 반지름과 항성 공전 반지름
